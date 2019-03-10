@@ -84,9 +84,22 @@ class Ui_MainWindow(object):
         font.setPointSize(15)
         self.label_9.setFont(font)
         self.label_9.setObjectName("label_9")
+        #--------------------------------------------------
+        self.label_34 = QtWidgets.QLabel(self.Module1Frame)
+        self.label_34.setGeometry(QtCore.QRect(350, 70, 51, 21))
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        self.label_34.setFont(font)
+        self.label_34.setObjectName("label_34")
+        #--------------------------------------------------
         self.textEdit_7 = QtWidgets.QTextEdit(self.Module1Frame)
         self.textEdit_7.setGeometry(QtCore.QRect(70, 70, 271, 21))
         self.textEdit_7.setObjectName("textEdit_7")
+        #--------------------------------------------------
+        self.textEdit_34 = QtWidgets.QTextEdit(self.Module1Frame)
+        self.textEdit_34.setGeometry(QtCore.QRect(368, 70, 65, 21))
+        self.textEdit_34.setObjectName("textEdit_34")
+        #--------------------------------------------------
         self.toolButton = QtWidgets.QToolButton(self.Module1Frame)
         self.toolButton.setGeometry(QtCore.QRect(320, 70, 26, 21))
         self.toolButton.setObjectName("toolButton")
@@ -422,6 +435,9 @@ class Ui_MainWindow(object):
         self.label_6.setText(_translate("MainWindow", "Lz:"))
         self.label_7.setText(_translate("MainWindow", "dz:"))
         self.label_9.setText(_translate("MainWindow", "s_true:"))
+        #-----------------------------------------------------
+        self.label_34.setText(_translate("MainWindow", "M:"))
+        #-----------------------------------------------------
         self.toolButton.setText(_translate("MainWindow", "..."))
         self.pushButton.setText(_translate("MainWindow", "check values"))
         self.label_8.setText(_translate("MainWindow", "Module 2: Forward Model Parameters"))
@@ -475,6 +491,7 @@ class Ui_MainWindow(object):
 # value_2 as the parameters Lx and dx. This contains handlers for 
 # incorrect data input
     def execute(self):
+        _translate = QtCore.QCoreApplication.translate
         value = int(self.textEdit_23.toPlainText())
         value_2 = int(self.textEdit_21.toPlainText())
 
@@ -485,6 +502,7 @@ class Ui_MainWindow(object):
             print("incorrect value, please input 0 for dx.\n")
         else:
             self.plot(value, value_2)
+            self.textEdit_34.setText(_translate("MainWindow", "10001"))
 
     def plot(self, lx, dx):
     # for windows application
